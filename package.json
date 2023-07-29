@@ -7,5 +7,8 @@
     "@typespec/openapi": "0.47.0",
     "@typespec/openapi3": "0.47.0"
   },
-  "private": true
+  "scripts": {
+    "build": "tsp compile .",
+    "test": "npm run build & spectral lint tsp-output/@typespec/openapi3/*.yaml"
+  }
 }

@@ -1,0 +1,11 @@
+{
+  "name": "typespec-openapiv3-examples",
+  "version": "0.1.0",
+  "type": "module",
+  "dependencies": {
+    "@typespec/compiler": "0.47.1",
+    "@typespec/openapi": "0.47.0",
+    "@typespec/openapi3": "0.47.0"
+  },
+  "private": true
+}

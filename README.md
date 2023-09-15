@@ -135,6 +135,16 @@ The [request body playground] shows how to specify the request body for an opera
 <!-- request-body.tsp -->
 [request body playground]: https://cadlplayground.z22.web.core.windows.net/?c=aW1wb3J0ICJAdHlwZXNwZWMvaHR0cCI7Cgp1c2luZyBUeXBlU3BlYy5IdHRwOwoKQHNlcnZpY2UoewogIHRpdGxlOiAiUmVxdWVzdCBCb2R5IiwKICB2ZXJzaW9uOiAiMC40Ny4xIiwKfSkKbmFtZXNwYWNlIMcxxDA7Cgptb2RlbCBXaWRnZXQgxFhAdmlzaWJpbGl0eSgicmVhZCIpCiAgaWQ6IHN0cmluZzsKICB3ZWlnaHQ%2FOiBpbnQzMsQSY29sb3I%2FOiAicmVkIiB8ICJibHVlIjsKfQoKQHJvdXRlKCIvYuQAouwAiuQAg8V0Ly8gZXhwbGljaXQgcucA0MQuIHdpdGggQMULZGVjb3JhdG9y5ACkcG9zdCBvcMk2KMYkd%2BUAxz865wDQKTogT2tSZXNwb25zZTsKxmlpbdRpKMQOaXJlZOQA7UBwdcVeyCsoLi4u1VLsAN7GfHPtAOHGNXPoAORkZWZhdWzPem1lZGlhIOQCAiBpcyAiYXDEdGF0aW9uL2pzb24i7ADvY3JlYXRl7QDt6wDsxgnoAOjNZWNvbnRlbnTmAVDLciJpbWFnZS9wbmfGaOYA%2BHVwbG9hZEnEGyhAaGVhZGVyyELkApM6zDcs5wGfxRI6IGJ5dGVzKTogdm9pZOQCGPMAjOYAhHVsdGlwbGXrAI1zIChidXQgc2FtZSBzY2hlbWHmAYzkAPzoAWY6xTgiKeQApmFuYWx5emUoCiAgICD2AKfsAU1vY3RldC1zdHJlYW3lAqLMHXBkZsUU5gDYanBlZ%2BUDSyDzAN0KICAp6gMM%2FwDg7gDgYW5kIGRpZmZlcuQBjOYA5OQA4%2BgA3XByb2Nlc%2BQCQyAg6gJFUMYW5QJFICBAc2hhcmVkUsQzxhHoAh3HPu0CresCEyAg5gPrQ3N25gN49gEzdGV4dC9jc3bpAdlf6ADtfeQB0P8AgeQAgTLkAILHZusAgyAgfQp9Cg%3D%3D&e=%40typespec%2Fopenapi3&options=%7B%7D
 
+### multipart/form-data
+
+The [multipart/form-data playground] shows how to specify a multipart/form-data request body in TypeSpec.
+
+- When using multipart/form-data to upload a file, use the `@format("binary")` decorator on the file property
+so that the implied content-type is "application/octet-stream".
+
+<!-- multipart-form-data.tsp -->
+[multipart/form-data playground]: https://cadlplayground.z22.web.core.windows.net/?c=aW1wb3J0ICJAdHlwZXNwZWMvaHR0cCI7Cgp1c2luZyBUeXBlU3BlYy5IdHRwOwoKQHNlcnZpY2UoewogIHRpdGxlOiAiV2lkZ2V0IFPGGyIsCiAgdmVyc2lvbjogIjEuMC4wIiwKfSkKbmFtZXNwYWNlIERlbW%2FHLzsKCgptb2RlbCBGb3JtIMRYQGhlYWRlciBjb250ZW505ACEOiAibXVsdGlwYXJ0L2Zvcm0tZGF0YSI7CiAgxFY6IHN0cmluZ8QQcmVzb3VyY2VJZNQWxk3KGEDETWF0KCJiaW5hcnkiKQogIGZp5ADXyCR9CgpAZXJyb3LnAKdFxAzlAKhjb2RlOiBpbnQzMsRLbWVzc2Fnzzpyb3V0ZSgi5QC0cyIpCmludGVyZuQBBOQA73PFSEBwb3N0IMQFxBQoLi4uxAgpOiB2b2lkIHzGcsRP&e=%40typespec%2Fopenapi3&options=%7B%22linterRuleSet%22%3A%7B%22extends%22%3A%5B%22%40typespec%2Fhttp%2Fall%22%5D%7D%7D
+
 ## Responses
 
 The `responses` object in OpenAPI is a map of status codes to response objects.

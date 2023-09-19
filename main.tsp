@@ -11,6 +11,7 @@ import "./external-docs.tsp";
 import "./external-ref.tsp";
 import "./info-and-servers.tsp";
 import "./multipart-form-data.tsp";
+import "./multipart-with-array-of-files.tsp";
 import "./nullable.tsp";
 import "./oneof-basic-types.tsp";
 import "./oneof-with-discriminator.tsp";

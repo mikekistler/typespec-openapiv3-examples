@@ -145,6 +145,14 @@ so that the implied content-type is "application/octet-stream".
 <!-- multipart-form-data.tsp -->
 [multipart/form-data playground]: https://cadlplayground.z22.web.core.windows.net/?c=aW1wb3J0ICJAdHlwZXNwZWMvaHR0cCI7Cgp1c2luZyBUeXBlU3BlYy5IdHRwOwoKQHNlcnZpY2UoewogIHRpdGxlOiAiV2lkZ2V0IFPGGyIsCiAgdmVyc2lvbjogIjEuMC4wIiwKfSkKbmFtZXNwYWNlIERlbW%2FHLzsKCgptb2RlbCBGb3JtIMRYQGhlYWRlciBjb250ZW505ACEOiAibXVsdGlwYXJ0L2Zvcm0tZGF0YSI7CiAgxFY6IHN0cmluZ8QQcmVzb3VyY2VJZNQWxk3KGEDETWF0KCJiaW5hcnkiKQogIGZp5ADXyCR9CgpAZXJyb3LnAKdFxAzlAKhjb2RlOiBpbnQzMsRLbWVzc2Fnzzpyb3V0ZSgi5QC0cyIpCmludGVyZuQBBOQA73PFSEBwb3N0IMQFxBQoLi4uxAgpOiB2b2lkIHzGcsRP&e=%40typespec%2Fopenapi3&options=%7B%22linterRuleSet%22%3A%7B%22extends%22%3A%5B%22%40typespec%2Fhttp%2Fall%22%5D%7D%7D
 
+The [multipart/form-data with array of files playground] shows how to specify a multipart/form-data request body in TypeSpec with an array of files.
+
+- You can't specify `@format("binary")` on an array property, so you need to define a scalar to represent
+a file with `@format("binary")` and then define a body property as an array of this scalar type.
+
+<!-- multipart-with-array-of-files.tsp -->
+[multipart/form-data with array of files playground]: https://cadlplayground.z22.web.core.windows.net/?c=aW1wb3J0ICJAdHlwZXNwZWMvaHR0cCI7Cgp1c2luZyBUeXBlU3BlYy5IdHRwOwoKQHNlcnZpY2UoewogIHRpdGxlOiAiV2lkZ2V0IFPGGyIsCiAgdmVyc2lvbjogIjEuMC4wIiwKfSkKbmFtZXNwYWNlIE11bHRpcGFydFdpdGhBcnJheU9mRmlsZXPEY2Zvcm1hdCgiYmluYXJ5IikKc2NhbGFyIGZpbGUgZXh0ZW5kcyBzdHJpbmc7Cgptb2RlbCBGb3JtIOQAlEBoZWFkZXIgY29udGVudOQAwDogIm3IcC%2FEXS1kYXRhIjsKICDkAJI6yUwgIHJlc291cmNlSWTUFsZNyhjkAJFzOsUHW107Cn0KCkBlcnJvcucAlEXEDOUAlWNvZGU6IGludDMyxDhtZXNzYWfLS8Q6cm91dGUoIuUAoXMiKQppbnRlcmbkAS3kANxzxUhAcG9zdCDEBcQUKC4uLsQIKTogdm9pZCB8xnLETw%3D%3D&e=%40typespec%2Fopenapi3&options=%7B%22linterRuleSet%22%3A%7B%22extends%22%3A%5B%22%40typespec%2Fhttp%2Fall%22%5D%7D%7D
+
 ## Responses
 
 The `responses` object in OpenAPI is a map of status codes to response objects.
@@ -239,7 +247,6 @@ The [nullable playground] shows how to specify a schema with `nullable` in TypeS
 
 <!-- nullable.tsp -->
 [nullable playground]: https://cadlplayground.z22.web.core.windows.net/?c=aW1wb3J0ICJAdHlwZXNwZWMvaHR0cCI7CtIZb3BlbmFwaTMiOwoKdXNpbmcgVHlwZVNwZWMuSHR0cDvHFU9wZW5BUEk7CgpAc2VydmljZSh7CiAgdGl0bGU6ICJOdWxsYWJsZSIsCiAgdmVyc2lvbjogIjAuNDcuMSIsCn0pCiNzdXBwcmVzc8x%2B5ACXL25vLXJvdXRlcyIKbmFtZXNwYWNlIMhSxHJvbmVPZgp1bmlvbskYU3Ry5ACYeyBzxQksIG51bGwgfTsKCm1vZGVsIEZsZXgg5ACjbWlnaHRCZcQ4Os8%2BOwp9Cg%3D%3D&e=%40typespec%2Fopenapi3&options=%7B%7D
-
 
 ### readOnly
 

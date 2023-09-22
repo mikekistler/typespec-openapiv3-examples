@@ -65,6 +65,9 @@ model DataTypes {
   // type: string, format: uri
   uri?: url;
 
+  // type string, format: time
+  time?: plainTime;
+
   // Some formats require the use of the @encode decorator
   // type: string, format: http-date
   @encode("http-date")

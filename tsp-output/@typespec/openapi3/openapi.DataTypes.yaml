@@ -8,6 +8,8 @@ components:
   schemas:
     DataTypes:
       type: object
+      required:
+        - httpDate
       properties:
         int32:
           type: integer
@@ -60,5 +62,3 @@ components:
           type: string
           description: 'type: string, format: uuid'
           format: uuid
-      required:
-        - httpDate

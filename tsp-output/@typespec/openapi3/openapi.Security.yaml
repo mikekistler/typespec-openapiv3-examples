@@ -12,6 +12,11 @@ components:
   schemas:
     MyFlow:
       type: object
+      required:
+        - type
+        - authorizationUrl
+        - tokenUrl
+        - scopes
       properties:
         type:
           type: string
@@ -28,11 +33,6 @@ components:
         scopes:
           type: array
           items: {}
-      required:
-        - type
-        - authorizationUrl
-        - tokenUrl
-        - scopes
   securitySchemes:
     OAuth2Auth:
       type: oauth2

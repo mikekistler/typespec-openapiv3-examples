@@ -87,9 +87,8 @@ paths:
             type: string
       responses:
         '204':
-          description: >-
-            There is no content to send for this request, but the headers may be
-            useful. 
+          description: 'There is no content to send for this request, but the headers may
+            be useful. '
     head:
       operationId: Widgets_head
       parameters:
@@ -105,6 +104,8 @@ components:
   schemas:
     Widget:
       type: object
+      required:
+        - id
       properties:
         id:
           type: string
@@ -117,8 +118,6 @@ components:
           enum:
             - red
             - blue
-      required:
-        - id
     WidgetUpdate:
       type: object
       properties:

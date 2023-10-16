@@ -11,21 +11,20 @@ components:
       additionalProperties: {}
     FooBar:
       type: object
-      properties:
-        bar:
-          type: string
       required:
         - bar
       allOf:
         - type: object
           additionalProperties: {}
-      additionalProperties: {}
+      properties:
+        bar:
+          type: string
     FooBaz:
       type: object
+      required:
+        - baz
       properties:
         baz:
           type: object
           additionalProperties:
             type: string
-      required:
-        - baz

@@ -8,6 +8,8 @@ components:
   schemas:
     Cat:
       type: object
+      required:
+        - kind
       properties:
         kind:
           type: string
@@ -16,10 +18,10 @@ components:
         meow:
           type: integer
           format: int32
-      required:
-        - kind
     Dog:
       type: object
+      required:
+        - kind
       properties:
         kind:
           type: string
@@ -27,8 +29,6 @@ components:
             - dog
         bark:
           type: string
-      required:
-        - kind
     Pet:
       oneOf:
         - $ref: '#/components/schemas/Cat'

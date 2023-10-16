@@ -8,27 +8,27 @@ components:
   schemas:
     Cat:
       type: object
-      properties:
-        meow:
-          type: integer
-          format: int32
       required:
         - meow
       allOf:
         - $ref: '#/components/schemas/Pet'
+      properties:
+        meow:
+          type: integer
+          format: int32
     Dog:
       type: object
-      properties:
-        bark:
-          type: string
       required:
         - bark
       allOf:
         - $ref: '#/components/schemas/Pet'
+      properties:
+        bark:
+          type: string
     Pet:
       type: object
+      required:
+        - name
       properties:
         name:
           type: string
-      required:
-        - name

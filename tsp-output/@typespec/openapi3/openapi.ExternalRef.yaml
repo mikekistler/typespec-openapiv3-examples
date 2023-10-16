@@ -25,6 +25,10 @@ components:
   schemas:
     Widget:
       type: object
+      required:
+        - id
+        - description
+        - weight
       properties:
         id:
           type: string
@@ -34,7 +38,3 @@ components:
         weight:
           type: number
           format: float
-      required:
-        - id
-        - description
-        - weight

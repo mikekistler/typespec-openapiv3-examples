@@ -51,9 +51,8 @@ paths:
       parameters: []
       responses:
         '204':
-          description: >-
-            There is no content to send for this request, but the headers may be
-            useful. 
+          description: 'There is no content to send for this request, but the headers may
+            be useful. '
       requestBody:
         required: true
         content:
@@ -110,6 +109,8 @@ components:
   schemas:
     Widget:
       type: object
+      required:
+        - id
       properties:
         id:
           type: string
@@ -122,12 +123,10 @@ components:
           enum:
             - red
             - blue
-      required:
-        - id
     Widgets.Process.CsvBody:
       type: object
+      required:
+        - _
       properties:
         _:
           type: string
-      required:
-        - _

@@ -59,6 +59,8 @@ components:
   schemas:
     Gadget:
       type: object
+      required:
+        - id
       properties:
         id:
           type: string
@@ -69,20 +71,22 @@ components:
             - medium
             - large
             - x-large
-      required:
-        - id
     Part:
       type: object
+      required:
+        - id
+        - description
       properties:
         id:
           type: string
         description:
           type: string
-      required:
-        - id
-        - description
     Widget:
       type: object
+      required:
+        - id
+        - weight
+        - color
       properties:
         id:
           type: string
@@ -95,7 +99,3 @@ components:
           enum:
             - red
             - blue
-      required:
-        - id
-        - weight
-        - color

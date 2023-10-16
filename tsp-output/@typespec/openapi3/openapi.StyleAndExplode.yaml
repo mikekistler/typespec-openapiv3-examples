@@ -76,6 +76,8 @@ components:
   schemas:
     Widget:
       type: object
+      required:
+        - id
       properties:
         id:
           type: string
@@ -88,5 +90,3 @@ components:
           enum:
             - red
             - blue
-      required:
-        - id

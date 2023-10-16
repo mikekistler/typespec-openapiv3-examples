@@ -64,16 +64,18 @@ components:
   schemas:
     Part:
       type: object
+      required:
+        - id
+        - description
       properties:
         id:
           type: string
         description:
           type: string
-      required:
-        - id
-        - description
     Widget:
       type: object
+      required:
+        - id
       properties:
         id:
           type: string
@@ -86,5 +88,3 @@ components:
           enum:
             - red
             - blue
-      required:
-        - id

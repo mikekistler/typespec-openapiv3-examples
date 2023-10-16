@@ -30,6 +30,10 @@ components:
   schemas:
     Widget:
       type: object
+      required:
+        - id
+        - description
+        - weight
       properties:
         id:
           type: string
@@ -40,8 +44,4 @@ components:
           type: number
           format: float
           x-ms-client-name: weightInPounds
-      required:
-        - id
-        - description
-        - weight
       x-external: true

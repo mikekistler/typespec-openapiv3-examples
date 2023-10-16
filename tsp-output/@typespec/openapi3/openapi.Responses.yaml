@@ -16,8 +16,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Widget'
         '201':
-          description: >-
-            The request has succeeded and a new resource has been created as a
+          description: The request has succeeded and a new resource has been created as a
             result.
           content:
             application/json:
@@ -77,9 +76,8 @@ paths:
             type: string
       responses:
         '204':
-          description: >-
-            There is no content to send for this request, but the headers may be
-            useful. 
+          description: 'There is no content to send for this request, but the headers may
+            be useful. '
   /widgets:conflict:
     post:
       operationId: Conflict_update
@@ -113,17 +111,19 @@ components:
   schemas:
     Error:
       type: object
+      required:
+        - code
+        - message
       properties:
         code:
           type: integer
           format: int32
         message:
           type: string
-      required:
-        - code
-        - message
     Widget:
       type: object
+      required:
+        - id
       properties:
         id:
           type: string
@@ -136,5 +136,3 @@ components:
           enum:
             - red
             - blue
-      required:
-        - id

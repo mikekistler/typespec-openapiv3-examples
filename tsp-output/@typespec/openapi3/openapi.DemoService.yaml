@@ -10,9 +10,8 @@ paths:
       parameters: []
       responses:
         '204':
-          description: >-
-            There is no content to send for this request, but the headers may be
-            useful. 
+          description: 'There is no content to send for this request, but the headers may
+            be useful. '
         default:
           description: An unexpected error response.
           content:
@@ -29,17 +28,22 @@ components:
   schemas:
     Error:
       type: object
+      required:
+        - code
+        - message
       properties:
         code:
           type: integer
           format: int32
         message:
           type: string
-      required:
-        - code
-        - message
     Form:
       type: object
+      required:
+        - name
+        - resourceId
+        - resourceType
+        - file
       properties:
         name:
           type: string
@@ -50,8 +54,3 @@ components:
         file:
           type: string
           format: binary
-      required:
-        - name
-        - resourceId
-        - resourceType
-        - file

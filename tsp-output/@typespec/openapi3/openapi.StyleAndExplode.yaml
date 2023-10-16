@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Style and Explode
-  version: 0.47.1
+  version: 0.49.0
 tags:
   - name: Widgets
 paths:
@@ -18,28 +18,29 @@ paths:
             type: string
         - name: skip
           in: query
-          style: simple
           required: false
           schema:
             type: string
+          style: form
+          explode: false
         - name: select
           in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
           style: spaceDelimited
           explode: false
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
         - name: expand
           in: query
-          style: pipeDelimited
-          explode: false
           required: false
           schema:
             type: array
             items:
               type: string
+          style: pipeDelimited
+          explode: false
       responses:
         '200':
           description: The request has succeeded.
@@ -61,10 +62,10 @@ paths:
             type: string
         - name: x-ms-client-request-id
           in: header
-          style: simple
           required: false
           schema:
             type: string
+          style: simple
       responses:
         '200':
           description: The request has succeeded.

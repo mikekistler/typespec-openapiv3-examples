@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Info and Servers
-  version: 0.47.1
+  version: 0.49.0
   description: OpenAPI v3 patterns and usage
   contact:
     name: API Support

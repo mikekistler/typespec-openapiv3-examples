@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Responses
-  version: 0.47.1
+  version: 0.49.0
 tags: []
 paths:
   /widgets:
@@ -16,8 +16,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Widget'
         '201':
-          description: The request has succeeded and a new resource has been created as a
-            result.
+          description: The request has succeeded and a new resource has been created as a result.
           content:
             application/json:
               schema:
@@ -76,8 +75,7 @@ paths:
             type: string
       responses:
         '204':
-          description: 'There is no content to send for this request, but the headers may
-            be useful. '
+          description: 'There is no content to send for this request, but the headers may be useful. '
   /widgets:conflict:
     post:
       operationId: Conflict_update
@@ -97,6 +95,35 @@ paths:
                 $ref: '#/components/schemas/Error'
         default:
           description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Widget'
+  /widgets:ranges:
+    post:
+      operationId: Ranges_update
+      parameters: []
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Widget'
+        4XX:
+          description: Client error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        5XX:
+          description: Server error
           content:
             application/json:
               schema:

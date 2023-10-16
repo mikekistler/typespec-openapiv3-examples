@@ -42,7 +42,7 @@ components:
         - name
         - resourceId
         - resourceType
-        - file
+        - files
       properties:
         name:
           type: string
@@ -50,6 +50,10 @@ components:
           type: string
         resourceType:
           type: string
-        file:
-          type: string
-          format: binary
+        files:
+          type: array
+          items:
+            $ref: '#/components/schemas/file'
+    file:
+      type: string
+      format: binary

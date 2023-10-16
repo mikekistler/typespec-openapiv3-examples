@@ -1,0 +1,18 @@
+openapi: 3.0.0
+info:
+  title: Defaults
+  version: 0.47.1
+tags: []
+paths: {}
+components:
+  schemas:
+    Defaults:
+      type: object
+      properties:
+        answer:
+          type: integer
+          format: int32
+          default: 42
+        color:
+          type: string
+          default: purple

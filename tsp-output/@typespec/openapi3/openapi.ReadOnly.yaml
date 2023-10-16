@@ -1,0 +1,23 @@
+openapi: 3.0.0
+info:
+  title: ReadOnly
+  version: 0.47.1
+tags: []
+paths: {}
+components:
+  schemas:
+    Widget:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        description:
+          type: string
+        weight:
+          type: number
+          format: float
+      required:
+        - id
+        - description
+        - weight

@@ -1,0 +1,37 @@
+openapi: 3.0.0
+info:
+  title: Assertions
+  version: 0.47.1
+tags: []
+paths: {}
+components:
+  schemas:
+    Assertions:
+      type: object
+      properties:
+        score:
+          type: integer
+          format: int32
+          minimum: 0
+          maximum: 100
+        confidence:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 1
+        value:
+          type: number
+          format: float
+          exclusiveMinimum: 0
+          exclusiveMaximum: 1
+        widgetId:
+          type: string
+          pattern: '[a-z-]+'
+          minLength: 2
+          maxLength: 64
+        wishes:
+          type: array
+          items:
+            type: string
+          minItems: 1
+          maxItems: 3

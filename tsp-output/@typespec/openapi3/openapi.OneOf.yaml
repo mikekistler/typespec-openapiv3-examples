@@ -1,0 +1,23 @@
+openapi: 3.0.0
+info:
+  title: OneOf
+  version: 0.47.1
+tags: []
+paths: {}
+components:
+  schemas:
+    Cat:
+      type: object
+      properties:
+        meow:
+          type: integer
+          format: int32
+    Dog:
+      type: object
+      properties:
+        bark:
+          type: string
+    Pet:
+      oneOf:
+        - $ref: '#/components/schemas/Cat'
+        - $ref: '#/components/schemas/Dog'

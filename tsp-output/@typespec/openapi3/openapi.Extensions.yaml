@@ -1,0 +1,47 @@
+openapi: 3.0.0
+info:
+  title: Extensions
+  version: 0.47.1
+tags: []
+paths:
+  /:
+    get:
+      operationId: read
+      parameters:
+        - name: top
+          in: query
+          required: false
+          schema:
+            type: integer
+            x-ms-client-name: maxCount
+          x-ms-client-name: maxCount
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Widget'
+      x-ms-pageable:
+        nextLinkName: nextLink
+components:
+  schemas:
+    Widget:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        description:
+          type: string
+        weight:
+          type: number
+          format: float
+          x-ms-client-name: weightInPounds
+      required:
+        - id
+        - description
+        - weight
+      x-external: true

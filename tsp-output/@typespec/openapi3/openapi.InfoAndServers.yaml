@@ -1,0 +1,25 @@
+openapi: 3.0.0
+info:
+  title: Info and Servers
+  version: 0.47.1
+  description: OpenAPI v3 patterns and usage
+  contact:
+    name: API Support
+    email: contact@contoso.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  x-my-extension: my extension value
+tags: []
+paths: {}
+components: {}
+servers:
+  - url: https://test.contoso.com
+    description: test domain
+    variables: {}
+  - url: https://api.{region}.contoso.com
+    description: production
+    variables:
+      region:
+        default: westus
+        description: Region name

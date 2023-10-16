@@ -1,0 +1,37 @@
+openapi: 3.0.0
+info:
+  title: Enums
+  version: 0.47.1
+tags: []
+paths: {}
+components:
+  schemas:
+    Color:
+      type: string
+      enum:
+        - red
+        - blue
+        - green
+    Dimensions:
+      type: number
+      enum:
+        - 1
+        - 2
+        - 3
+    Enums:
+      type: object
+      properties:
+        size:
+          type: string
+          enum:
+            - small
+            - medium
+            - large
+            - x-large
+        legs:
+          type: number
+          enum:
+            - 1
+            - 2
+            - 3
+            - 4

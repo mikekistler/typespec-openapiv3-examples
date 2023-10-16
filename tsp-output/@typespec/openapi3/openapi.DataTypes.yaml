@@ -1,0 +1,64 @@
+openapi: 3.0.0
+info:
+  title: Data Types
+  version: 0.47.1
+tags: []
+paths: {}
+components:
+  schemas:
+    DataTypes:
+      type: object
+      properties:
+        int32:
+          type: integer
+          format: int32
+        int64:
+          type: integer
+          format: int64
+        float32:
+          type: number
+          format: float
+        float64:
+          type: number
+          format: double
+        string:
+          type: string
+        bytes:
+          type: string
+          format: byte
+        notype: {}
+        boolean:
+          type: boolean
+        date:
+          type: string
+          format: date
+        dateTime:
+          type: string
+          format: date-time
+        password:
+          type: string
+          format: password
+        decimal:
+          type: number
+          format: decimal
+        int8:
+          type: integer
+          format: int8
+        int16:
+          type: integer
+          format: int16
+        uint8:
+          type: integer
+          format: uint8
+        uri:
+          type: string
+          format: uri
+        httpDate:
+          type: string
+          format: http-date
+        uuid:
+          type: string
+          description: 'type: string, format: uuid'
+          format: uuid
+      required:
+        - httpDate

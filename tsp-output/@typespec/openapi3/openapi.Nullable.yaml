@@ -1,0 +1,18 @@
+openapi: 3.0.0
+info:
+  title: Nullable
+  version: 0.47.1
+tags: []
+paths: {}
+components:
+  schemas:
+    Flex:
+      type: object
+      properties:
+        mightBeNull:
+          $ref: '#/components/schemas/NullableString'
+      required:
+        - mightBeNull
+    NullableString:
+      type: string
+      nullable: true

@@ -1,0 +1,71 @@
+openapi: 3.0.0
+info:
+  title: Operations
+  version: 0.47.1
+tags:
+  - name: Tags
+  - name: Tagging
+  - name: Create
+paths:
+  /tags/{id}:
+    get:
+      tags:
+        - Tags
+        - Tagging
+      operationId: Tags_read
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Widget'
+    put:
+      tags:
+        - Tags
+        - Tagging
+        - Create
+      operationId: Tags_create
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Widget'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Widget'
+components:
+  schemas:
+    Widget:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        weight:
+          type: integer
+          format: int32
+        color:
+          type: string
+          enum:
+            - red
+            - blue
+      required:
+        - id

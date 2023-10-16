@@ -1,0 +1,92 @@
+openapi: 3.0.0
+info:
+  title: Style and Explode
+  version: 0.47.1
+tags:
+  - name: Widgets
+paths:
+  /widgets:
+    get:
+      tags:
+        - Widgets
+      operationId: Widgets_list
+      parameters:
+        - name: top
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: skip
+          in: query
+          style: simple
+          required: false
+          schema:
+            type: string
+        - name: select
+          in: query
+          style: spaceDelimited
+          explode: false
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: expand
+          in: query
+          style: pipeDelimited
+          explode: false
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Widget'
+    post:
+      tags:
+        - Widgets
+      operationId: Widgets_create
+      parameters:
+        - name: api-version
+          in: header
+          required: false
+          schema:
+            type: string
+        - name: x-ms-client-request-id
+          in: header
+          style: simple
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Widget'
+components:
+  schemas:
+    Widget:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        weight:
+          type: integer
+          format: int32
+        color:
+          type: string
+          enum:
+            - red
+            - blue
+      required:
+        - id

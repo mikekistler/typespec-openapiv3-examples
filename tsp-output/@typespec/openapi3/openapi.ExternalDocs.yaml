@@ -1,0 +1,45 @@
+openapi: 3.0.0
+info:
+  title: External Docs
+  version: 0.47.1
+tags:
+  - name: External Docs
+paths:
+  /widgets/{id}:
+    post:
+      tags:
+        - External Docs
+      operationId: get
+      externalDocs:
+        url: https://docs.contoso.com/widgetservice
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Widget'
+components:
+  schemas:
+    Widget:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        weight:
+          type: integer
+          format: int32
+        color:
+          type: string
+          enum:
+            - red
+            - blue
+      required:
+        - id

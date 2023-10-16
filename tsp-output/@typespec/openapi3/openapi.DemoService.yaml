@@ -1,0 +1,57 @@
+openapi: 3.0.0
+info:
+  title: Widget Service
+  version: 1.0.0
+tags: []
+paths:
+  /forms:
+    post:
+      operationId: Forms_postForm
+      parameters: []
+      responses:
+        '204':
+          description: >-
+            There is no content to send for this request, but the headers may be
+            useful. 
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Form'
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+      required:
+        - code
+        - message
+    Form:
+      type: object
+      properties:
+        name:
+          type: string
+        resourceId:
+          type: string
+        resourceType:
+          type: string
+        file:
+          type: string
+          format: binary
+      required:
+        - name
+        - resourceId
+        - resourceType
+        - file

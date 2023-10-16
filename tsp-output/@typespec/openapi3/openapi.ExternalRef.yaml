@@ -1,0 +1,40 @@
+openapi: 3.0.0
+info:
+  title: External Ref
+  version: 0.47.1
+tags: []
+paths:
+  /:
+    get:
+      operationId: read
+      parameters: []
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Widget'
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: common.json#components.schemas.Error
+components:
+  schemas:
+    Widget:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        description:
+          type: string
+        weight:
+          type: number
+          format: float
+      required:
+        - id
+        - description
+        - weight

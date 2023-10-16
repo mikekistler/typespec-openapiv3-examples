@@ -1,0 +1,45 @@
+openapi: 3.0.0
+info:
+  title: Security
+  version: 0.47.1
+tags: []
+paths: {}
+security:
+  - OAuth2Auth:
+      - read
+      - write
+components:
+  schemas:
+    MyFlow:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+            - authorizationCode
+        authorizationUrl:
+          type: string
+          enum:
+            - https://api.example.com/oauth2/authorize
+        tokenUrl:
+          type: string
+          enum:
+            - https://api.example.com/oauth2/token
+        scopes:
+          type: array
+          items: {}
+      required:
+        - type
+        - authorizationUrl
+        - tokenUrl
+        - scopes
+  securitySchemes:
+    OAuth2Auth:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://api.example.com/oauth2/authorize
+          tokenUrl: https://api.example.com/oauth2/token
+          scopes:
+            read: ''
+            write: ''

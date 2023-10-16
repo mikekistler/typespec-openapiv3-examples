@@ -1,0 +1,90 @@
+openapi: 3.0.0
+info:
+  title: Operation Ids
+  version: 0.47.1
+tags: []
+paths:
+  /status:
+    get:
+      operationId: status
+      parameters: []
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                type: string
+  /widgets/{id}:
+    get:
+      operationId: Widgets_get
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Widget'
+  /widgets/{id}/parts:
+    get:
+      operationId: Parts_list
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Part'
+    post:
+      operationId: order
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The request has succeeded.
+components:
+  schemas:
+    Part:
+      type: object
+      properties:
+        id:
+          type: string
+        description:
+          type: string
+      required:
+        - id
+        - description
+    Widget:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        weight:
+          type: integer
+          format: int32
+        color:
+          type: string
+          enum:
+            - red
+            - blue
+      required:
+        - id

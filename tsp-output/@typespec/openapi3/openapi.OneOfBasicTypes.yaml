@@ -1,0 +1,17 @@
+openapi: 3.0.0
+info:
+  title: OneOfBasicTypes
+  version: 0.47.1
+tags: []
+paths: {}
+components:
+  schemas:
+    Flex:
+      type: object
+      properties:
+        stringOrInt:
+          $ref: '#/components/schemas/StringOrInt'
+    StringOrInt:
+      oneOf:
+        - type: string
+        - type: integer

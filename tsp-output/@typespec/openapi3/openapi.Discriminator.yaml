@@ -1,0 +1,53 @@
+openapi: 3.0.0
+info:
+  title: Discriminator
+  version: 0.47.1
+tags: []
+paths: {}
+components:
+  schemas:
+    Cat:
+      type: object
+      properties:
+        kind:
+          type: string
+          enum:
+            - cat
+        meow:
+          type: integer
+          format: int32
+      required:
+        - kind
+      allOf:
+        - $ref: '#/components/schemas/Pet'
+    Dog:
+      type: object
+      properties:
+        kind:
+          type: string
+          enum:
+            - dog
+        bark:
+          type: string
+      required:
+        - kind
+      allOf:
+        - $ref: '#/components/schemas/Pet'
+    Pet:
+      type: object
+      properties:
+        kind:
+          type: string
+          description: Discriminator property for Pet.
+        name:
+          type: string
+        weight:
+          type: number
+          format: float
+      discriminator:
+        propertyName: kind
+        mapping:
+          cat: '#/components/schemas/Cat'
+          dog: '#/components/schemas/Dog'
+      required:
+        - name

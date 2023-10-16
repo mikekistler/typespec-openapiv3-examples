@@ -1,0 +1,74 @@
+openapi: 3.0.0
+info:
+  title: Operation Docs
+  version: 0.47.1
+tags:
+  - name: Description
+  - name: Summary
+paths:
+  /health:
+    get:
+      tags:
+        - Description
+      operationId: health
+      description: |-
+        Get health for the service.
+
+        The health value may be one of:
+        - `ok`: the service is operating normally
+        - `degraded`: the service is operating in a degraded state
+        - `down`: the service is not operating
+      parameters: []
+      responses:
+        '200':
+          description: The request has succeeded.
+  /status/{region}:
+    get:
+      tags:
+        - Description
+      operationId: status
+      description: |-
+        Get status for a region.
+
+        The status includes
+        - the number of active workers
+        - the number of pending jobs
+        - the average job duration
+      parameters:
+        - name: region
+          in: path
+          required: true
+          description: The region for which to return status
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The request has succeeded.
+  /validate:
+    post:
+      tags:
+        - Summary
+      operationId: validate
+      summary: Validate service configuration
+      parameters: []
+      responses:
+        '200':
+          description: The request has succeeded.
+components:
+  schemas:
+    Widget:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        weight:
+          type: integer
+          format: int32
+        color:
+          type: string
+          enum:
+            - red
+            - blue
+      required:
+        - id

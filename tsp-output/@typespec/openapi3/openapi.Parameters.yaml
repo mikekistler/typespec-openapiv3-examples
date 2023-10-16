@@ -1,0 +1,135 @@
+openapi: 3.0.0
+info:
+  title: Parameters
+  version: 0.47.1
+tags:
+  - name: Widgets
+paths:
+  /widgets:
+    get:
+      tags:
+        - Widgets
+      operationId: Widgets_list
+      parameters:
+        - name: top
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+        - name: skip
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Widget'
+  /widgets/{id}:
+    get:
+      tags:
+        - Widgets
+      operationId: Widgets_get
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Widget'
+    patch:
+      tags:
+        - Widgets
+      operationId: Widgets_update
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: if-match
+          in: header
+          required: false
+          description: Etag of current resource
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Widget'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                body:
+                  $ref: '#/components/schemas/WidgetUpdate'
+    post:
+      tags:
+        - Widgets
+      operationId: Widgets_action
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - $ref: '#/components/parameters/Widgets.ApiVersionParam'
+      responses:
+        '200':
+          description: The request has succeeded.
+components:
+  parameters:
+    Widgets.ApiVersionParam:
+      name: api-version
+      in: query
+      required: true
+      description: The api version
+      schema:
+        type: string
+  schemas:
+    Widget:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        weight:
+          type: integer
+          format: int32
+        color:
+          type: string
+          enum:
+            - red
+            - blue
+      required:
+        - id
+    WidgetUpdate:
+      type: object
+      properties:
+        weight:
+          type: integer
+          format: int32
+        color:
+          type: string
+          enum:
+            - red
+            - blue

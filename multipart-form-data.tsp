@@ -4,7 +4,7 @@ using TypeSpec.Http;
 
 @service({
   title: "Widget Service",
-  version: "1.0.0",
+  version: "0.49.0",
 })
 namespace DemoService;
 

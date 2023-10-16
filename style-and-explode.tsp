@@ -6,7 +6,7 @@ using OpenAPI;
 
 @service({
   title: "Style and Explode",
-  version: "0.47.1",
+  version: "0.49.0",
 })
 namespace StyleAndExplode;
 

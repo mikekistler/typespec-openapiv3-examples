@@ -4,7 +4,7 @@ using TypeSpec.Http;
 
 @service({
   title: "Response Object",
-  version: "0.47.1",
+  version: "0.49.0",
 })
 namespace ResponseObject;
 

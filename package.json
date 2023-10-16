@@ -1,14 +1,18 @@
 {
   "name": "typespec-openapiv3-examples",
-  "version": "0.48.0",
+  "version": "0.49.0",
   "type": "module",
   "dependencies": {
-    "@typespec/compiler": "^0.48.0",
-    "@typespec/openapi": "0.48.0",
-    "@typespec/openapi3": "0.48.0"
+    "@typespec/compiler": "0.49.0",
+    "@typespec/openapi": "0.49.0",
+    "@typespec/openapi3": "0.49.0"
   },
   "scripts": {
     "build": "tsp compile .",
     "test": "npm run build & spectral lint tsp-output/@typespec/openapi3/*.yaml"
+  },
+  "devDependencies": {
+    "commander": "^11.1.0",
+    "lzutf8": "^0.6.3"
   }
 }

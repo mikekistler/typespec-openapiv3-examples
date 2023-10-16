@@ -6,7 +6,7 @@ using OpenAPI;
 
 @service({
   title: "Parameters",
-  version: "0.47.1",
+  version: "0.49.0",
 })
 namespace Parameters;
 

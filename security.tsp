@@ -4,7 +4,7 @@ using TypeSpec.Http;
 
 @service({
   title: "Security",
-  version: "0.47.1"
+  version: "0.49.0"
 })
 @useAuth(OAuth2Auth<[MyFlow]>)
 namespace Security;

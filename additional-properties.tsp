@@ -4,7 +4,7 @@ using TypeSpec.Http;
 
 @service({
   title: "Additional Properties",
-  version: "0.47.1",
+  version: "0.49.0",
 })
 #suppress "@typespec/http/no-routes"
 namespace AdditionalProperties;

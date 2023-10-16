@@ -9,7 +9,7 @@ using OpenAPI;
 // title and version are set with the @service decorator
 @service({
   title: "Info and Servers",
-  version: "0.47.1",
+  version: "0.49.0",
 })
 // contact and license are set with the @info decorator
 @info({

@@ -6,7 +6,7 @@ using OpenAPI;
 
 @service({
   title: "OneOfWithDiscriminator",
-  version: "0.47.1",
+  version: "0.49.0",
 })
 #suppress "@typespec/http/no-routes"
 namespace OneOfWithDiscriminator;

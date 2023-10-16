@@ -37,4 +37,13 @@ namespace Widgets {
     // has "200", '409', and "default" responses
     @post op update(@body widget: Widget): Widget | ConflictResponse & Error | Error;
   }
+
+  @route(":ranges")
+  namespace Ranges {
+    // has "200", '4XX' Client error, and "5XX" Service error responses
+    @post op update(@body widget: Widget): 
+    Widget 
+    | {@statusCode @minValue(400) @maxValue(499) _: int32} & Error
+    | {@statusCode @minValue(500) @maxValue(599) _: int32} & Error;
+  }
 }

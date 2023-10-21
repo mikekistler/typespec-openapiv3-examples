@@ -48,7 +48,6 @@ The health value may be one of:
  * - the average job duration
  * 
  * @param region The region for which to return status
- * @response 200 The status for the region
  */
 @tag("Description")
 @route("/status")

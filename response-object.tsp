@@ -15,6 +15,12 @@ model Widget {
   color?: "red" | "blue";
 }
 
+@error
+model Error {
+  code: string;
+  message: string;
+}
+
 // Content
 
 @route("/widgets")
@@ -45,6 +51,15 @@ namespace Widgets {
   // response with custom response description
   @route("{id}/droidCheck")
   @post op droidCheck(...WidgetId): JediResponse;
+
+  // Or use @returns and @errors in the operation description
+
+  @route("{id}/terminator")
+  /**
+   * @returns I'll be back
+   * @errors Something went wrong
+   */
+  @post op terminator(...WidgetId): {@statusCode _: 202} | Error;
 
   // Add headers to a response with the `@header` decorator.
 

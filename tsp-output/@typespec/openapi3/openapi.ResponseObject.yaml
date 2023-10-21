@@ -60,6 +60,20 @@ paths:
       responses:
         '204':
           description: These are not the droids you are looking for.
+  /widgets/{id}/terminator:
+    post:
+      operationId: Widgets_terminator
+      parameters:
+        - $ref: '#/components/parameters/Widgets.WidgetId'
+      responses:
+        '202':
+          description: I'll be back
+        default:
+          description: Something went wrong
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
   /widgets/{id}:headers:
     get:
       tags:
@@ -92,6 +106,16 @@ components:
       schema:
         type: string
   schemas:
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
     Widget:
       type: object
       required:
